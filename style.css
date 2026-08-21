@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+min-height:100vh;overflow:hidden;font-family:'Poppins',sans-serif;color:#fff;
+background:radial-gradient(circle at 15% 20%,rgba(255,74,160,.65),transparent 30%),
+radial-gradient(circle at 85% 15%,rgba(115,75,255,.75),transparent 32%),
+radial-gradient(circle at 50% 100%,rgba(255,190,60,.45),transparent 35%),
+linear-gradient(135deg,#18002f,#3b006b 48%,#12002d)
+}
+.page{
+position:absolute;inset:0;min-height:100vh;padding:24px;display:flex;align-items:center;
+justify-content:center;opacity:0;pointer-events:none;transform:scale(.94) translateY(15px);
+transition:opacity .7s ease,transform .7s ease
+}
+.page.active{opacity:1;pointer-events:auto;transform:scale(1) translateY(0)}
+.glass-card,.birthday-card{
+width:min(92vw,620px);padding:50px 42px;text-align:center;border-radius:32px;
+background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.28);
+box-shadow:0 30px 90px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.18);
+backdrop-filter:blur(18px)
+}
+.birthday-card{
+background:linear-gradient(145deg,rgba(255,255,255,.18),rgba(255,255,255,.06));
+border:1px solid rgba(255,215,120,.65);
+box-shadow:0 30px 100px rgba(0,0,0,.45),0 0 70px rgba(255,83,174,.18),inset 0 1px 0 rgba(255,255,255,.25)
+}
+.gift{font-size:82px;margin-bottom:12px;animation:float 2.4s ease-in-out infinite}
+.sorry-icon{font-size:72px;margin-bottom:12px;animation:pulse 2s ease-in-out infinite}
+.crown{font-size:68px;margin-bottom:8px;filter:drop-shadow(0 0 18px rgba(255,220,90,.8));animation:float 2.5s ease-in-out infinite}
+.eyebrow{letter-spacing:4px;font-size:12px;font-weight:600;color:#ffd66e;margin-bottom:16px}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,9vw,72px);line-height:.95;font-weight:700;margin-bottom:22px;text-shadow:0 8px 30px rgba(0,0,0,.25)}
+h1 span{background:linear-gradient(90deg,#ffe58c,#ff83cf,#b79cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{color:rgba(255,255,255,.78);margin-bottom:34px;font-size:15px}
+.message{max-width:500px;margin:0 auto 18px;font-size:17px;line-height:1.8;color:rgba(255,255,255,.92)}
+.message.secondary{color:rgba(255,255,255,.72);font-size:15px;margin-bottom:32px}
+.glow-btn{
+border:0;padding:16px 30px;border-radius:999px;color:#35104d;
+background:linear-gradient(90deg,#ffe58c,#ff9fd8);font-family:'Poppins',sans-serif;
+font-size:15px;font-weight:700;cursor:pointer;
+box-shadow:0 10px 30px rgba(255,113,191,.35),0 0 25px rgba(255,219,117,.2);
+transition:transform .25s ease,box-shadow .25s ease
+}
+.glow-btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 15px 40px rgba(255,113,191,.5),0 0 35px rgba(255,219,117,.35)}
+.birthday-title{font-size:clamp(48px,10vw,82px);margin-bottom:18px}
+.birthday-title span{display:block;font-size:.82em;margin-top:5px}
+.divider{display:flex;justify-content:center;gap:18px;color:#ffd66e;margin:20px 0 25px;font-size:18px}
+.birthday-message{max-width:530px;margin:0 auto;font-size:16px;line-height:1.9;color:rgba(255,255,255,.88)}
+.birthday-wish{margin:20px 0 30px;font-size:18px;font-weight:600;background:linear-gradient(90deg,#ffe58c,#ff92d0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.final-card h1{font-size:54px}.final-card h2{font-family:'Cormorant Garamond',serif;color:#ffd66e;font-size:40px;margin:15px 0}
+.final-card p{color:rgba(255,255,255,.85);line-height:1.7}.final-text{margin:20px 0}
+.final-hearts{font-size:38px;margin-bottom:15px;animation:pulse 2s infinite}.signature{margin-top:25px;color:#ffacd9;font-size:14px}
+.sparkles::before,.sparkles::after{
+content:"✦  ✧  ✦  ✧  ✦  ✧  ✦";position:fixed;width:100%;color:rgba(255,255,255,.35);
+font-size:18px;letter-spacing:30px;animation:sparkle 8s linear infinite;pointer-events:none
+}
+.sparkles::before{top:12%;left:-10%}.sparkles::after{top:78%;left:-25%;animation-delay:-4s}
+.confetti::before,.confetti::after{
+content:"✦  •  ✧  ♥  ✦  •  ✧  ♥  ✦";position:absolute;width:120%;left:-10%;
+color:rgba(255,215,100,.45);font-size:18px;letter-spacing:18px;animation:fall 12s linear infinite
+}
+.confetti::before{top:-40px}.confetti::after{top:-300px;animation-delay:-6s;color:rgba(255,130,210,.4)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+@keyframes sparkle{from{transform:translateX(-5%);opacity:.2}50%{opacity:.65}to{transform:translateX(12%);opacity:.2}}
+@keyframes fall{from{transform:translateY(-10vh) rotate(0)}to{transform:translateY(115vh) rotate(360deg)}}
+@media(max-width:600px){
+.page{padding:16px}.glass-card,.birthday-card{padding:38px 24px;border-radius:26px}
+.gift{font-size:68px}.sorry-icon{font-size:62px}.crown{font-size:58px}.message{font-size:15px}
+.birthday-message{font-size:14px}.birthday-wish{font-size:16px}.glow-btn{width:100%}
+}
